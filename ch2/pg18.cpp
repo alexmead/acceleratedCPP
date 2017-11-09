@@ -4,9 +4,6 @@
 
 int main()
 {
-    const int pad = 1;// number of blanks surrounding greeting
-    const int rows = pad * 2 + 3; // total number of rows
-    
     // ask for the person's name
     std::cout << "Please enter your first name: ";
     
@@ -20,13 +17,22 @@ int main()
     // seperate output from the input
     std::cout << std::endl;
     
+    const int pad = 1;// number of blanks surrounding greeting
+    const int rows = pad * 2 + 3; // total number of rows
+    const std::string::size_type cols = greeting.size() + pad * 2 +2
+    
     // write rows rows of output
     int r = 0;
     
     // invarient: we have written r rows so far
     while (r != rows) {
         // write a row
-        std::cout << std::endl;
+        std::string::size_type c = 0;
+        // invarient: we have written c characters so far for the current row
+        while (c != cols){
+            // write one or more characters
+            // addjust c
+        }
         ++r;
     }
     
