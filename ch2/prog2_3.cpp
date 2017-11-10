@@ -18,10 +18,16 @@ int main()
     // build the message that we intend to write
     const string greeting = "Hello, " + name + "!";
     
+    // as user for pad size
+    cout << "How much padding should be included in the output? ";
+    
+    // Note, no longer a 'const'
+    int pad;// number of blanks surrounding greeting
+    cin >> pad;
+    
     // seperate output from the input, i.e. give space on the terminal output for better viewing.
     cout << endl;
     
-    const int pad = 0;// number of blanks surrounding greeting
     const int rows = pad * 2 + 3; // total number of rows
     const string::size_type cols = greeting.size() + pad * 2 + 2;
     

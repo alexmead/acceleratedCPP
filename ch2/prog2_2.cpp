@@ -21,9 +21,10 @@ int main()
     // seperate output from the input, i.e. give space on the terminal output for better viewing.
     cout << endl;
     
-    const int pad = 0;// number of blanks surrounding greeting
-    const int rows = pad * 2 + 3; // total number of rows
-    const string::size_type cols = greeting.size() + pad * 2 + 2;
+    const int padVertical = 3;// number of blanks surrounding greeting
+    const int padHorizontal = 10;
+    const int rows = padVertical * 2 + 3; // total number of rows
+    const string::size_type cols = greeting.size() + padHorizontal * 2 + 2;
     
     // invarient: we have written r rows so far
     for (int r=0; r != rows; ++r) {
@@ -35,7 +36,7 @@ int main()
         while (c != cols){
             
             // Check greeting first
-            if (r == pad + 1 && c == pad +1) {
+            if (r == padVertical + 1 && c == padHorizontal +1) {
                 std::cout << greeting;
                 c += greeting.size();
                 

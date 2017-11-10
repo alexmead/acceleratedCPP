@@ -18,10 +18,16 @@ int main()
     // build the message that we intend to write
     const string greeting = "Hello, " + name + "!";
     
+    // as user for pad size
+    cout << "How much padding should be included in the output? ";
+    
+    // Note, no longer a 'const'
+    int pad;// number of blanks surrounding greeting
+    cin >> pad;
+    
     // seperate output from the input, i.e. give space on the terminal output for better viewing.
     cout << endl;
     
-    const int pad = 0;// number of blanks surrounding greeting
     const int rows = pad * 2 + 3; // total number of rows
     const string::size_type cols = greeting.size() + pad * 2 + 2;
     
@@ -36,16 +42,28 @@ int main()
             
             // Check greeting first
             if (r == pad + 1 && c == pad +1) {
-                std::cout << greeting;
+                cout << greeting;
                 c += greeting.size();
                 
             // Else, it is a boarder or white space
             } else {
-                if (r == 0 || r == rows - 1 || c == 0 || c == cols - 1)
-                    std::cout << "*";
-                else
-                    cout << " ";
-                ++c;
+                if (r == 0 || r == rows - 1 || c == 0 || c == cols - 1) {
+                    cout << "*";
+                    ++c;
+                }
+                else {
+                    // Check what row, then construct spaces accordingly, output those spaces, then increment c
+                    if (r == pad + 1){ // Checks if it is the greeting row
+                        string spaces(pad,' ');
+                        cout << spaces;
+                        c = c + pad;
+                    } else { // Else, output a large sequence of spaces at one time
+                        string spaces(greeting.size() + pad*2, ' ');
+                        cout << spaces;
+                        c = c + greeting.size() + pad*2;
+                    }
+                }
+                
             }
         }
         
