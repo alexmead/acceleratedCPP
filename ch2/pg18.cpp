@@ -34,8 +34,13 @@ int main()
                 std::cout << "*";
                 ++c;
             } else {
-                // write non-border characters
-                // adjust c
+                if (r == pad + 1 && c == pad +1) {
+                    std::cout << greating;
+                    c += greeting.size();
+                } else {
+                    std::cout << " ";
+                    ++c;
+                }
             }
         }
         ++r;
