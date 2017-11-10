@@ -19,7 +19,7 @@ int main()
     
     const int pad = 1;// number of blanks surrounding greeting
     const int rows = pad * 2 + 3; // total number of rows
-    const std::string::size_type cols = greeting.size() + pad * 2 +2
+    const std::string::size_type cols = greeting.size() + pad * 2 + 2;
     
     // write rows rows of output
     int r = 0;
@@ -35,7 +35,7 @@ int main()
                 ++c;
             } else {
                 if (r == pad + 1 && c == pad +1) {
-                    std::cout << greating;
+                    std::cout << greeting;
                     c += greeting.size();
                 } else {
                     std::cout << " ";
@@ -43,6 +43,7 @@ int main()
                 }
             }
         }
+        std::cout << std::endl;
         ++r;
     }
     
