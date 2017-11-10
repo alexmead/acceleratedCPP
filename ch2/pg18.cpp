@@ -30,8 +30,13 @@ int main()
         std::string::size_type c = 0;
         // invarient: we have written c characters so far for the current row
         while (c != cols){
-            // write one or more characters
-            // addjust c
+            if (r == 0 || r == rows - 1 || c == 0 || c == cols - 1) {
+                std::cout << "*";
+                ++c;
+            } else {
+                // write non-border characters
+                // adjust c
+            }
         }
         ++r;
     }
