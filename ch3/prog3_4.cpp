@@ -26,7 +26,7 @@ int main() {
     vec_sz wordCount = words.size();
     typedef string::size_type string_sz;
     
-    string_sz shortest = 100;
+    string_sz shortest = 100;// start with this as it is highly unlikely there are no words shorter than this in the input
     string_sz longest = 0;
     int shortIndex = 0;
     int longIndex = 0;
