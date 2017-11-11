@@ -27,9 +27,6 @@ int main() {
     
     // loop through and start counting the word counts
     vector<int> wordNumber(wordCount);
-    //for (int i = 0; i != wordCount; ++i ) {
-    //    workNumber[i] = 0;
-    //}
     
     for (int i = 0; i != wordCount; ++i) {
         string testWord = words[i];
@@ -39,24 +36,7 @@ int main() {
             }
         }
     }
-    
-    
-    /*
-    // check for repeats
-    vector<bool> repeat(wordCount);
-    vector<int> locationOfRepeat(wordCount);
-    
-    for (int i = 0; i != wordCount; ++i) {
-        string nowWord = words[i];
-        for (int j = 0; j != wordCount; ++j) {
-            if (i != j && nowWord == words[j]) {
-                repeat[i] = true;
-                locationOfRepeat[i] = j;
-            }
-                
-        }
-    }
-    */
+
     vector<string> displayedWords;
     
     // Tell the user the number of distinct word repeats
