@@ -3,6 +3,7 @@
 
 using std::istream;
 using std::vector;
+using std::cin;
 
 bool compare(const Student_info& x, const Student_info& y)
 {

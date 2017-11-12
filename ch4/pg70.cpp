@@ -37,6 +37,7 @@ int main()
         
         // compute and generate the final grade if possible
         try {
+            //Student_info& stud = students[i];
             double final_grade = grade(students[i]);
             streamsize prec = cout.precision();
             cout << setprecision(3)
