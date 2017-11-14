@@ -1,10 +1,10 @@
+#include <algorithm>
 #include <iomanip>
 #include <ios>
 #include <iostream>
-#include <string>
-#include <algorithm>
-#include <vector>
 #include <stdexcept>
+#include <string>
+#include <vector>
 #include "grade.h"
 #include "Student_info.h"
 
@@ -19,7 +19,7 @@ int main()
     // vector of student infor
     vector<Student_info> students;
     Student_info record;
-    string::size_type maxlen = 0;
+    string::size_type maxlen = 0;  // longest name, needed for spacing purposes
     
     // read and store student information
     while (read(cin,record)) {
@@ -40,8 +40,8 @@ int main()
             //Student_info& stud = students[i];
             double final_grade = grade(students[i]);
             streamsize prec = cout.precision();
-            cout << setprecision(3)
-            << final_grade << setprecision(prec) << endl;
+            cout << setprecision(3) << final_grade
+            << setprecision(prec);
         } catch (domain_error e) {
             cout << e.what();
         }

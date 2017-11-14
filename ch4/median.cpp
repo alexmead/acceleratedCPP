@@ -1,6 +1,6 @@
-#include <algorithm>
-#include <stdexcept>
-#include <vector>
+#include <algorithm> // sort function
+#include <stdexcept> // domain_error
+#include <vector>    // vector
 
 using std::domain_error;
 using std::sort;
