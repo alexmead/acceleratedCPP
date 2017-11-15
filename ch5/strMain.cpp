@@ -62,6 +62,22 @@ int main() {
             cout << framed_v[i] << endl;
         }
         
+        cout << endl << endl;
+        // frame the words
+        vector<string> vcat_v = vcat(v, framed_v);
+        
+        for (vector<string>::size_type i = 0; i != vcat_v.size(); ++i) {
+            cout << vcat_v[i] << endl;
+        }
+        
+        cout << endl << endl;
+        // frame the words
+        vector<string> hcat_v = hcat(v, framed_v);
+        
+        for (vector<string>::size_type i = 0; i != hcat_v.size(); ++i) {
+            cout << hcat_v[i] << endl;
+        }
+        
     }
     
     
