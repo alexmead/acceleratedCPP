@@ -8,6 +8,37 @@ using std::string;
 using std::vector;
 using std::max;
 
+// splits a string literal of multiple words into a
+// vector with each word being an element within it.
+vector<string> split(const string& s)
+{
+    vector<string> ret;
+    typedef string::size_type string_size;
+    string_size i = 0;
+    
+    while (i != s.size()) {
+        // burn up multiple white spaces which might lead off the input
+        while ( i != s.size() && isspace(s[i]))
+            ++i;
+        
+        // First real character, now step j forward
+        string_size j = i;
+        while (j != s.size() && !isspace(s[j]))
+            ++j;
+        
+        // Assuming progress of at least one character is made, the string is
+        // subtracted and push_back() on the vector
+        if (i != j) {
+            ret.push_back(s.substr(i,j - i));
+            i = j;
+        }
+        
+    }
+    return ret;
+}
+
+// returns the longest word length of a vector of
+// strings
 string::size_type width(const vector<string>& v)
 {
     string::size_type maxlen = 0;
@@ -43,7 +74,6 @@ vector<string> vcat(const vector<string>& top, const vector<string>& bottom)
     return ret;
     // ret.insert(ret.end(), bottom.begin(), bottom.end());
 }
-
 
 vector<string> hcat(const vector<string>& left, const vector<string>& right)
 {
