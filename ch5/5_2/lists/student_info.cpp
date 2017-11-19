@@ -1,10 +1,17 @@
 // source file for Student_info - related functions
-#include "Student_info.h"
 #include <list>
+#include <vector>
+#include <string>
+#include "Student_info.h"
+#include "grade.h"
+#include "str.h"
 
 using std::istream;
 using std::vector;
 using std::cin;
+using std::list;
+using std::string;
+
 
 bool compare(const Student_info& x, const Student_info& y)
 {
@@ -13,11 +20,21 @@ bool compare(const Student_info& x, const Student_info& y)
 
 istream& read(istream& is, Student_info& s)
 {
-    // read and store the student's name and midterm and final exam grades
-    is >> s.name >> s.midterm >> s.final; // s.x references change the origanl data structure, pass-by-reference
+    string inputLine; // holds the input
+    if (!getline(is, inputLine))// takes input from stdin
+        return is;
+    vector<string> inputVector;
+    inputVector = split(inputLine); // split along spaces
+    s.name =inputVector[0];
+    s.midterm = stod(inputVector[1]);
+    s.final = stod(inputVector[2]);
     
-    read_hw(is, s.homework); // read and store all the student's hw grades
-    
+    for(vector<string>::size_type i = 3; i != inputVector.size(); ++i) {
+        s.homework.push_back(stod(inputVector[i]));
+    }
+    double finalGrade;
+    finalGrade = grade(s);
+    s.grade = finalGrade;
     return is;
 }
 
@@ -46,7 +63,7 @@ vector<Student_info> extract_fails(vector<Student_info>& students)
         if (fgrade(students[i]))
             fail.push_back(students[i]);
         else {
-            fall.push_back(students[i]);
+            fail.push_back(students[i]);
         }
     }
     students = pass;

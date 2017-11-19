@@ -70,7 +70,6 @@ int main() {
             cout << theInputLines[i].inputVector[l] << " ";
         }
         cout << endl;
-        //cout << string(maxLength + 5,' ') << theInputLines[i].rawInputLine;
         
     }
     cout << endl;

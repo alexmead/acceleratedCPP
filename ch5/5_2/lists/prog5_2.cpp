@@ -9,7 +9,7 @@
 #include <list>
 #include "Student_info.h"
 
-using std::list
+using std::list;
 using std::string;
 using std::cin;
 using std::cout;
@@ -31,10 +31,11 @@ int main() {
         students.push_back(record);
     }
     
+    list<Student_info>::size_type studNum = students.size();
     
     // vector methods to seperate failures
     list<Student_info> fails;
-    fails = extract_fails(students);
+    fails = extract_fails_iterator(students);
     
     
     /*
@@ -53,7 +54,10 @@ int main() {
         cout << fails[i].name << " " << fails[i].grade << endl;
     }
     */
-    cout << "Time taken: " << (double)(std::clock()-t_start)/CLOCKS_PER_SEC << " seconds" << endl;
+
+    cout << "List length,"<< studNum <<", time taken: " << (double)(std::clock()-t_start)/CLOCKS_PER_SEC << " seconds" << endl;
+    
+    
     
     return 0;
 }

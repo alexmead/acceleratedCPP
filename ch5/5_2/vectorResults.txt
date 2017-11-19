@@ -1,0 +1,3 @@
+Vector length,100, time taken: 0.004008 seconds
+Vector length,1000, time taken: 0.218084 seconds
+Vector length,10000, time taken: 23.6811 seconds

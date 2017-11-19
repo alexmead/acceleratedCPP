@@ -1,0 +1,3 @@
+List length,100, time taken: 0.003705 seconds
+List length,1000, time taken: 0.181838 seconds
+List length,10000, time taken: 16.9111 seconds
