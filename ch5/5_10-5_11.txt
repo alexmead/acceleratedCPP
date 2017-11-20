@@ -1,0 +1,3 @@
+These last two examples are skipped here as they are again just string manipulation
+and no new particular concepts are presented. In the interest of learning more C++ core
+language features, these are skipped.
