@@ -47,13 +47,15 @@ int main() {
         }
         
         cout << endl << endl;
+         */
+         
         // frame the words
         vector<string> hcat_v = hcat(v, framed_v);
         
         for (vector<string>::size_type i = 0; i != hcat_v.size(); ++i) {
             cout << hcat_v[i] << endl;
         }
-         */
+         
         
     }
     
