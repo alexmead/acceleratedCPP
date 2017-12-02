@@ -21,7 +21,7 @@ int main()
     // seperate output from the input, i.e. give space on the terminal output for better viewing.
     cout << endl;
     
-    const int pad = 0;// number of blanks surrounding greeting
+    const int pad = 3;// number of blanks surrounding greeting
     const int rows = pad * 2 + 3; // total number of rows
     const string::size_type cols = greeting.size() + pad * 2 + 2;
     

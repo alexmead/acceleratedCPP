@@ -46,7 +46,7 @@ int main() {
     }
     
     // Tell the user what you have found regarding word length
-    cout << endl << "The short word is of length " << shortest << " and is " << words[shortIndex] << endl;
+    cout << endl << "The shortest word is of length " << shortest << " and is " << words[shortIndex] << endl;
     cout << "The longest word is of length " << longest << " and is " << words[longIndex] << endl;
     
     return 0;

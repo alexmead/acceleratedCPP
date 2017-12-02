@@ -15,7 +15,7 @@ using std::string;
 
 int main(){
     // how high, but not including, do you want to display?
-    int maxSquaredValue = 101;
+    int maxSquaredValue = 1001;
     
     // Based on the largest value, what is a good baseWidth?
     int baseWidth = 22 + (int)std::to_string(maxSquaredValue).size() - 3;

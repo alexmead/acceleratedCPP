@@ -49,7 +49,7 @@ std::vector<word> countTheWords(vector<string> wordOnStreamVector){
     // Count each word's recurrent number
     std::vector<long long> theWordAmounts(wordOnStreamVector.size());
     
-    for (std::vector<word>::size_type i = 0; i != wordOnStreamVector.size(); ++i){
+    for (std::vector<string>::size_type i = 0; i != wordOnStreamVector.size(); ++i){
         string currentWord = wordOnStreamVector[i];
         theWordAmounts[i]=0;
         for(vector<word>::size_type j = 0; j != wordOnStreamVector.size(); ++j){

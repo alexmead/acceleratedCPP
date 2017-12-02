@@ -2,7 +2,7 @@
 // this program, presented in full on pace 46 and 47. Here, to account for a possible 0
 // length entry, we do a check and simply return '1', indicating an error, to the
 // implementation.  I played around with another example using my Mac (Yosemite) and
-// determined my implementation will return a 'nan' value if I did by 0.
+// determined my implementation will return a 'nan' value if I divide by 0.
 
 
 // I see it now, the check for zero length is actually on the median calculating version,
