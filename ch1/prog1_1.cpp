@@ -4,6 +4,7 @@
 
 int main()
 {
+    // This program works because ", world" is a string literal and "!" is a char
     const std::string hello = "Hello?";
     const std::string message = hello + ", world" + "!";
     
