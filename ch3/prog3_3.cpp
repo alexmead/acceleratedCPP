@@ -27,15 +27,19 @@ int main() {
     
     // loop through and start counting the word counts
     vector<int> wordNumber(wordCount);
+    string::size_type maxStringLength = 0;
     
     for (int i = 0; i != wordCount; ++i) {
         string testWord = words[i];
+        maxStringLength = std::max(maxStringLength,testWord.size());
         for (int j = 0; j != wordCount; ++j) {
             if (testWord == words[j]) {
                 ++wordNumber[i];
             }
         }
     }
+    
+    maxStringLength++;
 
     vector<string> displayedWords;
     
@@ -43,8 +47,9 @@ int main() {
     for (int i = 0; i != wordCount; ++i) {
         
         if (i ==0) {
-        
-            cout << "word: " <<  words[0] << " count: " << wordNumber[0] << endl;
+            string::size_type pad = words[0].size();
+            string spaces(maxStringLength - pad,' ');
+            cout << "word: " <<  words[0] << spaces << "count: " << wordNumber[0] << endl;
             displayedWords.push_back(words[0]);
         
         } else {
@@ -59,7 +64,9 @@ int main() {
                 }
             }
             if (!repeat){
-                cout << "word: " <<  words[i] << " count: " << wordNumber[i] << endl;
+                string::size_type pad = words[i].size();
+                string spaces(maxStringLength-pad,' ');
+                cout << "word: " <<  words[i] << spaces << "count: " << wordNumber[i] << endl;
                 displayedWords.push_back(words[i]);
             }
         }
